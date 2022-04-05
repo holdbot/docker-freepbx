@@ -24,7 +24,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=$GITHUB_REPOSITORY
+          DOCKER_IMAGE=ghcr.io/${GITHUB_REPOSITORY}
           set -x
           if [[ $GITHUB_REF == refs/heads/* ]]; then
              if [[ $GITHUB_REF == refs/heads/*/* ]] ; then
@@ -81,7 +81,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Label
