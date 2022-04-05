@@ -8,7 +8,7 @@ ENV ASTERISK_VERSION=17.9.4 \
     G72X_CPUHOST=penryn \
     G72X_VERSION=0.1 \
     MONGODB_VERSION=4.2 \
-    PHP_VERSION=5.6 \
+    PHP_VERSION=7.4 \
     SPANDSP_VERSION=20180108 \
     RTP_START=18000 \
     RTP_FINISH=20000
@@ -277,7 +277,7 @@ RUN echo "Package: libxml2*" > /etc/apt/preferences.d/libxml2 && \
     mkdir -p /var/log/asterisk && \
     mkdir -p /var/log/apache2 && \
     mkdir -p /var/log/httpd && \
-    update-alternatives --set php /usr/bin/php5.6 && \
+    update-alternatives --set php /usr/bin/php${PHP_VERSION} && \
     \
 ### Zabbix setup
     echo '%zabbix ALL=(asterisk) NOPASSWD:/usr/sbin/asterisk' >> /etc/sudoers && \
