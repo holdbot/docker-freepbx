@@ -23,7 +23,7 @@ RUN echo "Package: libxml2*" > /etc/apt/preferences.d/libxml2 && \
     set -x && \
     curl -sSLk https://packages.sury.org/php/apt.gpg | apt-key add - && \
     curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
-    echo "deb https://deb.nodesource.com/node_10.x $(cat /etc/os-release |grep "VERSION=" | awk 'NR>1{print $1}' RS='(' FS=')') main" > /etc/apt/sources.list.d/nodejs.list && \
+    echo "deb https://deb.nodesource.com/node_14.x $(cat /etc/os-release |grep "VERSION=" | awk 'NR>1{print $1}' RS='(' FS=')') main" > /etc/apt/sources.list.d/nodejs.list && \
     echo "deb https://packages.sury.org/php/ buster main" > /etc/apt/sources.list.d/deb.sury.org.list && \
     curl -sSLk https://www.mongodb.org/static/pgp/server-${MONGODB_VERSION}.asc | apt-key add - && \
     echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/${MONGODB_VERSION} main" > /etc/apt/sources.list.d/mongodb-org.list && \
